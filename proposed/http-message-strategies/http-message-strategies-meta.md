@@ -67,7 +67,7 @@ If we think of the absence of type declarations as the type declaration using
 the (non-existing) `mixed` type, then the type hierarchy differences between
 `__invoke` and non-`__invoke` interfaces can be pictured as:
 
-![method name comparison image](/proposed/http-message-strategies/resources/method-name-comparison.svg)
+![method name comparison image](resources/method-name-comparison.svg)
 
 The `__invoke` hierarchy allows callers to choose a more accurate type declaration depending on their needs, may it be `InvokeInterface`, `callable` or none at all (the `mixed` type-hint). If we chose a non-`__invoke` name and a caller may want to support `callable` too, then the caller must skip the `callable` type by removing the type declaration entirely and must type check at run-time. This is undesirable, because it hampers static source code analysis of the caller code.
 

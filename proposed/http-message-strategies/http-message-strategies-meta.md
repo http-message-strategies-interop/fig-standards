@@ -45,6 +45,34 @@ concrete frameworks and vice versa.
 
 ## 4. Design Decisions
 
+It is possible to distinguish two common approaches to process HTTP Messages: the _procedural_ approach in which methods mutate the state of their operands and the _functional_ approach in which methods return the result without modifying their operands.
+
+[PSR-7](http://www.php-fig.org/psr/psr-7/) HTTP Messages are [immutable objects](http://en.wikipedia.org/wiki/Immutable_object), which makes defining their augmentation by means of `callable` and/or `__invoke` interfaces the most natural choice.
+
+### 4.1 Why not `callable`?
+
+While it is possible to define contracts solely informal and/or by means of `callable`/`is_callable`, the PHP `interface` language feature provide several crucial benefits:
+
+* It allows static source code analysis, which improves IDE and QA tool support.
+* `instanceof` makes run-time type checking simple, fast and reliable.
+* The contract is available through PHP comments.
+
+### 4.2 Why `__invoke`?
+
+The method name `__invoke` or any alternative name make no substantial difference
+for interface implementers, but for callers – interface implementers MUST
+implement the corresponding `interface` to comply with this PSR.
+
+If we think of the absence of type declarations as the type declaration using
+the (non-existing) `mixed` type, then the type hierarchy differences between
+`__invoke` and non-`__invoke` interfaces can be pictured as:
+
+![method name comparison image](/proposed/http-message-strategies/resources/method-name-comparison.svg)
+
+The `__invoke` hierarchy allows callers to choose a more accurate type declaration depending on their needs, may it be `InvokeInterface`, `callable` or none at all (the `mixed` type-hint). If we chose a non-`__invoke` name and a caller may want to support `callable` too, then the caller must skip the `callable` type by removing the type declaration entirely and must type check at run-time. This is undesirable, because it hampers static source code analysis of the caller code.
+
+Furthermore, current _higherorder functions_ like middlewares, routers, their dispatchers and many more become instantaneously compatible with an `__invoke` interface, which additionally makes `__invoke` superior to alternative method names.
+
 ## 5. People
 
 ### 5.1. Editor(s)

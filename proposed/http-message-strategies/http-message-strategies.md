@@ -23,7 +23,7 @@ This specification defines contracts for the most common strategies, which accep
 
 ## 2. Package
 
-The interfaces described are provided as part of the [psr/http-message-strategies](https://github.com/php-fig/http-message-strategies) package.
+The interfaces described are provided as part of the [psr/http-message-strategies](https://github.com/http-message-strategies-interop/http-message-strategies) package.
 
 ## 3. Interfaces
 

@@ -20,14 +20,14 @@ The HTTP Request-Response Cycle typically includes the following tasks:
 
 1. The client creates a (plain) request object.
 2. The client augments that request object.
-3. The client sends the request object to the server.
+3. The client sends the request object to the server and receives the produced response.
 4. The server augments the request object.
-5. The server processes the request by:
-  1. creating a (plain) response object
-  2. augmenting that response object.
-6. The server sends the response object back to the client.
-7. The client augments the response object.
+5. The server creates a (plain) response object.
+6. The server augments that response object before sending it back.
+7. The client augments the received response object.
 8. The client processes the fully augmented response object.
+
+![request response cycle](resources/request-response-cycle.png)
 
 Common contracts for these tasks will allow libraries to be decoupled from
 concrete frameworks and vice versa.

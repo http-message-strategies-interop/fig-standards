@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="560px" height="265px">
+	<defs>
+		<marker id="arrowhead" markerWidth="12" markerHeight="14" refX="1" refY="6" orient="auto" markerUnits="strokeWidth">
+			<path d="m1,1v10l8,-5z"/>
+		</marker>
+	</defs>
+	<rect width="560" height="265" fill="#fff"/>
+
+	<g id="process" font-size="12px" font-family="Verdana,Helvetica,Arial,sans-serif">
+		<text text-anchor="middle" x="170" y="22" font-style="italic">Client</text>
+		<rect x="70" y="30" width="200" height="220" fill="#fff" stroke="#000" rx="10" ry="10"/>
+
+		<rect x="100" y="50" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="105" y="55" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="110" y="60" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="140" y="80" text-anchor="middle" alignment-baseline="central">2.</text>
+
+		<path d="M170,75H210V112" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+		<rect x="180" y="120" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="210" y="140" text-anchor="middle" alignment-baseline="central">3.</text>
+
+		<path d="M210,160V205H178" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+		<rect x="100" y="180" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="105" y="185" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="110" y="190" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="140" y="210" text-anchor="middle" alignment-baseline="central">7.</text>
+
+
+		<text text-anchor="middle" x="440" y="22" font-style="italic">Server</text>
+		<rect x="340" y="30" width="200" height="220" fill="#fff" stroke="#000" rx="10" ry="10"/>
+
+		<rect x="370" y="50" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="375" y="55" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="380" y="60" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="410" y="80" text-anchor="middle" alignment-baseline="central">4.</text>
+
+		<path d="M440,75H480V112" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+		<rect x="450" y="120" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="480" y="140" text-anchor="middle" alignment-baseline="central">5.</text>
+
+		<path d="M480,160V205H448" stroke="#000" fill="none" marker-end="url(#arrowhead)"/>
+
+		<rect x="370" y="180" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="375" y="185" width="60" height="40" fill="#fff" stroke="#000"/>
+		<rect x="380" y="190" width="60" height="40" fill="#fff" stroke="#000"/>
+		<text x="410" y="210" text-anchor="middle" alignment-baseline="central">6.</text>
+
+		<path d="M30,75H92" fill="none" stroke="#000" stroke-dasharray="12,2" marker-end="url(#arrowhead)"/>
+		<circle cx="30" cy="75" r="15" stroke="#000" fill="#fff"/>
+		<text x="30" y="75" text-anchor="middle" alignment-baseline="central">1.</text>
+
+		<path d="M100,205H53" fill="none" stroke="#000" stroke-dasharray="12,2" marker-end="url(#arrowhead)"/>
+		<circle cx="30" cy="205" r="15" stroke="#000" fill="#fff"/>
+		<text x="30" y="205" text-anchor="middle" alignment-baseline="central">8.</text>
+
+		<path d="M240,130H305V75H362" stroke="#000" stroke-dasharray="12,2" fill="none" marker-end="url(#arrowhead)"/>
+		<path d="M370,205H305V150H248" stroke="#000" stroke-dasharray="12,2" fill="none" marker-end="url(#arrowhead)"/>
+	</g>
+</svg>

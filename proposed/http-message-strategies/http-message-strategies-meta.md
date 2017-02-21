@@ -69,7 +69,7 @@ the (non-existing) `mixed` type, then the type hierarchy differences between
 
 ![method name comparison image](resources/method-name-comparison.png)
 
-The `__invoke` hierarchy allows callers to choose a more accurate type declaration depending on their needs, may it be `InvokableInterface`, `callable` or none at all (the `mixed` type-hint). If we chose a non-`__invoke` name and a caller may want to support `callable` too, then the caller must skip the `callable` type by removing the type declaration entirely and must type check at run-time. This is undesirable, because it hampers static source code analysis of the caller code.
+The `__invoke` hierarchy allows callers to choose a more accurate type declaration depending on their needs, may it be `InvokableInterface`, `callable` or none at all (the `mixed` type-hint). If we chose a non-`__invoke` name and a caller wants to support `callable` too, then the caller must skip the `callable` type by removing the type declaration entirely. This is undesirable, because it hampers static source code analysis of the caller code.
 
 Furthermore, current _higherorder functions_ like middlewares, routers, their dispatchers and many more become instantaneously compatible with an `__invoke` interface, which additionally makes `__invoke` superior to alternative method names.
 

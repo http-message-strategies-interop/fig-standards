@@ -18,8 +18,10 @@ interfaces/functionality.
 
 ## 1. Specification
 
-An _HTTP Message Strategy_ is a component which can be used to process HTTP messages.
+* An _HTTP Message Strategy_ is a component which can be used to process HTTP messages.
 This specification defines contracts for the most common strategies, which accept a _PSR-7 Message_ and produce a _PSR-7 Message_.
+* An _Operator_ is a functional component which returns a result of the same type as its operand.
+* A _RequestHandler_ is a functional component which accepts a request and returns a `Psr\Http\Message\ResponseInterface` result.
 
 ## 2. Package
 
@@ -29,7 +31,7 @@ The interfaces described are provided as part of the [psr/http-message-strategie
 
 An _HTTP Message Strategy_ using this standard MUST implement the corresponding `interface` and the behaviour described by its comments.
 
-### 3.1 `Psr\Http\Message\Strategies\RequestRequestInterface`
+### 3.1 `Psr\Http\Message\Strategies\RequestOperatorInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -37,9 +39,9 @@ namespace Psr\Http\Message\Strategies;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Defines a contract for algorithms which accept a request argument and produce a request.
+ * Defines a contract for functions which accept a request argument and produce a request.
  */
-interface RequestRequestInterface
+interface RequestOperatorInterface
 {
     /**
      * Process a request and return the produced request.
@@ -52,7 +54,7 @@ interface RequestRequestInterface
 }
 ```
 
-### 3.2 `Psr\Http\Message\Strategies\RequestResponseInterface`
+### 3.2 `Psr\Http\Message\Strategies\RequestHandlerInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -61,9 +63,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Defines a contract for algorithms which accept a request argument and produce a response.
+ * Defines a contract for functions which accept a request argument and produce a response.
  */
-interface RequestResponseInterface
+interface RequestHandlerInterface
 {
     /**
      * Process a request and return the produced response.
@@ -76,7 +78,7 @@ interface RequestResponseInterface
 }
 ```
 
-### 3.3 `Psr\Http\Message\Strategies\ResponseResponseInterface`
+### 3.3 `Psr\Http\Message\Strategies\ResponseOperatorInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -84,9 +86,9 @@ namespace Psr\Http\Message\Strategies;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Defines a contract for algorithms which accept a respose argument and produce a respose.
+ * Defines a contract for functions which accept a respose argument and produce a respose.
  */
-interface ResponseResponseInterface
+interface ResponseOperatorInterface
 {
     /**
      * Process a respose and return the produced respose.
@@ -99,7 +101,7 @@ interface ResponseResponseInterface
 }
 ```
 
-### 3.4 `Psr\Http\Message\Strategies\ServerRequestResponseInterface`
+### 3.4 `Psr\Http\Message\Strategies\ServerRequestHandlerInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -108,9 +110,9 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Defines a contract for algorithms which accept a server request argument and produce a respose.
+ * Defines a contract for functions which accept a server request argument and produce a respose.
  */
-interface ServerRequestResponseInterface
+interface ServerRequestHandlerInterface
 {
     /**
      * Process a server request and return the produced response.
@@ -123,7 +125,7 @@ interface ServerRequestResponseInterface
 }
 ```
 
-### 3.5 `Psr\Http\Message\Strategies\ServerRequestServerRequestInterface`
+### 3.5 `Psr\Http\Message\Strategies\ServerRequestOperatorInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -131,9 +133,9 @@ namespace Psr\Http\Message\Strategies;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Defines a contract for algorithms which accept a server request argument and produce a server request.
+ * Defines a contract for functions which accept a server request argument and produce a server request.
  */
-interface ServerRequestServerRequestInterface
+interface ServerRequestOperatorInterface
 {
     /**
      * Process a request and return the produced server request.

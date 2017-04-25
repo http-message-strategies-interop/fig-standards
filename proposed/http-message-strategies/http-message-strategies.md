@@ -21,7 +21,7 @@ interfaces/functionality.
 * An _HTTP Message Strategy_ is a component which can be used to process HTTP messages.
 This specification defines contracts for the most common strategies, which accept a _PSR-7 Message_ and produce a _PSR-7 Message_.
 * An _Operator_ is a functional component which returns a result of the same type as its operand.
-* A _RequestHandler_ is a functional component which accepts a request and returns a `Psr\Http\Message\ResponseInterface` result.
+* A _Action_ is a functional component which accepts a request and returns a `Psr\Http\Message\ResponseInterface` result.
 
 ## 2. Package
 
@@ -54,7 +54,7 @@ interface RequestOperatorInterface
 }
 ```
 
-### 3.2 `Psr\Http\Message\Strategies\RequestHandlerInterface`
+### 3.2 `Psr\Http\Message\Strategies\ActionInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -65,7 +65,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Defines a contract for functions which accept a request argument and produce a response.
  */
-interface RequestHandlerInterface
+interface ActionInterface
 {
     /**
      * Process a request and return the produced response.
@@ -101,7 +101,7 @@ interface ResponseOperatorInterface
 }
 ```
 
-### 3.4 `Psr\Http\Message\Strategies\ServerRequestHandlerInterface`
+### 3.4 `Psr\Http\Message\Strategies\ServerActionInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -112,7 +112,7 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * Defines a contract for functions which accept a server request argument and produce a respose.
  */
-interface ServerRequestHandlerInterface
+interface ServerActionInterface
 {
     /**
      * Process a server request and return the produced response.

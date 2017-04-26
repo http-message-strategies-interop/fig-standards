@@ -36,12 +36,15 @@ concrete frameworks and vice versa.
 
 ### 3.1. Goals
 
-* Standardize common HTTP Message strategies to process HTTP Messages defined by [PSR-7](http://www.php-fig.org/psr/psr-7/).
+* Standardize common server-side HTTP Message strategies to process HTTP Messages defined by [PSR-7](http://www.php-fig.org/psr/psr-7/).
 * Standardize contracts based on best practices.
 
 ### 3.2. Non-Goals
 
 * Standardize or favor any particular application architecture or assume its presence.
+* Standardize asynchronous/client HTTP Message strategies, because
+  - there are not enough use cases known to the authors,
+  - these strategies can be standardized by separate PSRs.
 
 ## 4. Design Decisions
 

@@ -31,54 +31,7 @@ The interfaces described are provided as part of the [psr/http-message-strategie
 
 An _HTTP Message Strategy_ using this standard MUST implement the corresponding `interface` and the behaviour described by its comments.
 
-### 3.1 `Psr\Http\Message\Strategies\RequestOperatorInterface`
-
-```php
-namespace Psr\Http\Message\Strategies;
-
-use Psr\Http\Message\RequestInterface;
-
-/**
- * Defines a contract for functions which accept a request argument and produce a request.
- */
-interface RequestOperatorInterface
-{
-    /**
-     * Process a request and return the produced request.
-     *
-     * @param RequestInterface $request
-     *
-     * @return RequestInterface
-     */
-    public function __invoke(RequestInterface $request);
-}
-```
-
-### 3.2 `Psr\Http\Message\Strategies\ActionInterface`
-
-```php
-namespace Psr\Http\Message\Strategies;
-
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-
-/**
- * Defines a contract for functions which accept a request argument and produce a response.
- */
-interface ActionInterface
-{
-    /**
-     * Process a request and return the produced response.
-     *
-     * @param RequestInterface $request
-     *
-     * @return ResponseInterface
-     */
-    public function __invoke(RequestInterface $request);
-}
-```
-
-### 3.3 `Psr\Http\Message\Strategies\ResponseOperatorInterface`
+### 3.1 `Psr\Http\Message\Strategies\ResponseOperatorInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -101,7 +54,7 @@ interface ResponseOperatorInterface
 }
 ```
 
-### 3.4 `Psr\Http\Message\Strategies\ServerActionInterface`
+### 3.2 `Psr\Http\Message\Strategies\ServerActionInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
@@ -125,7 +78,7 @@ interface ServerActionInterface
 }
 ```
 
-### 3.5 `Psr\Http\Message\Strategies\ServerRequestOperatorInterface`
+### 3.3 `Psr\Http\Message\Strategies\ServerRequestOperatorInterface`
 
 ```php
 namespace Psr\Http\Message\Strategies;
